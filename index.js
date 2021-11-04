@@ -52,7 +52,7 @@ async function run() {
             const result = await cartCollection.insertOne(order);
             res.json(result)
         })
-        // GET API FROM ORDER
+        // GET API FROM ORDERs
         app.get('/cart', async (req, res) => {
             const cursor = cartCollection.find({ email: req.query.email });
             const orders = await cursor.toArray();
